@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GrowthSpark - Digital Marketing Agency</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: #ffffff;
+      color: #111827;
+      line-height: 1.6;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 8%;
+      box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+    }
+
+    .logo {
+      font-size: 28px;
+      font-weight: 800;
+    }
+
+    .logo span {
+      color: #2563eb;
+    }
+
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #111827;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #2563eb;
+    }
+
+    .btn {
+      background: #2563eb;
+      color: white;
+      padding: 12px 28px;
+      border-radius: 12px;
+      text-decoration: none;
+      display: inline-block;
+      transition: 0.3s;
+      font-weight: 600;
+    }
+
+    .btn:hover {
+      background: #1e40af;
+      transform: translateY(-2px);
+    }
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 60px 8%;
+      background: linear-gradient(to right, #eff6ff, #ffffff);
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .hero-text {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .hero-text h1 {
+      font-size: 58px;
+      line-height: 1.2;
+      margin-bottom: 20px;
+      font-weight: 800;
+    }
+
+    .hero-text p {
+      font-size: 18px;
+      color: #4b5563;
+      margin-bottom: 35px;
+    }
+
+    .hero-image {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .hero-image img {
+      width: 100%;
+      border-radius: 30px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+    }
+
+    section {
+      padding: 90px 8%;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .section-title h2 {
+      font-size: 42px;
+      margin-bottom: 15px;
+    }
+
+    .section-title p {
+      color: #6b7280;
+      max-width: 700px;
+      margin: auto;
+    }
+
+    .services {
+      background: #f9fafb;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+
+    .service-card {
+      background: white;
+      padding: 35px;
+      border-radius: 25px;
+      transition: 0.3s;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    }
+
+    .service-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    }
+
+    .service-card h3 {
+      margin: 20px 0 10px;
+      font-size: 24px;
+    }
+
+    .service-card p {
+      color: #6b7280;
+    }
+
+    .icon {
+      font-size: 50px;
+    }
+
+    .about {
+      display: flex;
+      align-items: center;
+      gap: 60px;
+      flex-wrap: wrap;
+    }
+
+    .about img {
+      width: 100%;
+      max-width: 500px;
+      border-radius: 30px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+    }
+
+    .about-text {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .about-text h2 {
+      font-size: 42px;
+      margin-bottom: 20px;
+    }
+
+    .about-text p {
+      color: #6b7280;
+      margin-bottom: 25px;
+    }
+
+    .stats {
+      display: flex;
+      gap: 25px;
+      margin-top: 30px;
+      flex-wrap: wrap;
+    }
+
+    .stat-box {
+      background: #eff6ff;
+      padding: 25px;
+      border-radius: 20px;
+      min-width: 160px;
+    }
+
+    .stat-box h3 {
+      color: #2563eb;
+      font-size: 32px;
+    }
+
+    .testimonials {
+      background: linear-gradient(to right, #2563eb, #4f46e5);
+      color: white;
+    }
+
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+
+    .testimonial-card {
+      background: rgba(255,255,255,0.12);
+      padding: 35px;
+      border-radius: 25px;
+      backdrop-filter: blur(10px);
+    }
+
+    .testimonial-card p {
+      margin-bottom: 20px;
+    }
+
+    .contact {
+      background: #f9fafb;
+    }
+
+    .contact-wrapper {
+      display: flex;
+      gap: 50px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .contact-info {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .contact-form {
+      flex: 1;
+      min-width: 300px;
+      background: white;
+      padding: 40px;
+      border-radius: 25px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 15px;
+      margin-bottom: 20px;
+      border: 1px solid #d1d5db;
+      border-radius: 12px;
+      font-size: 16px;
+    }
+
+    .contact-form textarea {
+      resize: none;
+      height: 140px;
+    }
+
+    footer {
+      background: #111827;
+      color: #d1d5db;
+      text-align: center;
+      padding: 25px;
+    }
+
+    @media(max-width: 900px) {
+      .hero {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .hero-text h1 {
+        font-size: 42px;
+      }
+
+      .about {
+        flex-direction: column;
+      }
+
+      nav {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">Growth<span>Spark</span></div>
+
+    <nav>
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#testimonials">Testimonials</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <a href="#contact" class="btn">Get Started</a>
+  </header>
+
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Grow Your Business With Smart Digital Marketing</h1>
+      <p>
+        We help startups and businesses increase online visibility, generate leads,
+        and grow revenue using powerful marketing strategies.
+      </p>
+
+      <a href="#contact" class="btn">Start Now</a>
+    </div>
+
+    <div class="hero-image">
+      <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1200&auto=format&fit=crop" alt="Marketing Team">
+    </div>
+  </section>
+
+  <section class="services" id="services">
+    <div class="section-title">
+      <h2>Our Services</h2>
+      <p>
+        Powerful digital marketing services designed to grow your startup and business.
+      </p>
+    </div>
+
+    <div class="service-grid">
+      <div class="service-card">
+        <div class="icon">📈</div>
+        <h3>SEO Optimization</h3>
+        <p>Improve search rankings and drive organic traffic to your website.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="icon">📱</div>
+        <h3>Social Media Marketing</h3>
+        <p>Grow your brand presence across Instagram, Facebook, and LinkedIn.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="icon">✍️</div>
+        <h3>Content Creation</h3>
+        <p>Create engaging content that builds trust and converts visitors.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="icon">💰</div>
+        <h3>Paid Advertising</h3>
+        <p>Run high-converting ads on Google and social media platforms.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200&auto=format&fit=crop" alt="About Us">
+
+    <div class="about-text">
+      <h2>We Build Brands That Stand Out</h2>
+
+      <p>
+        GrowthSpark is a creative digital marketing startup helping businesses grow online
+        with innovative strategies, strong branding, and result-driven campaigns.
+      </p>
+
+      <a href="#contact" class="btn">Learn More</a>
+
+      <div class="stats">
+        <div class="stat-box">
+          <h3>200+</h3>
+          <p>Happy Clients</p>
+        </div>
+
+        <div class="stat-box">
+          <h3>500+</h3>
+          <p>Projects Completed</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonials" id="testimonials">
+    <div class="section-title">
+      <h2>Client Testimonials</h2>
+      <p>
+        Businesses trust us for delivering amazing marketing results.
+      </p>
+    </div>
+
+    <div class="testimonial-grid">
+      <div class="testimonial-card">
+        <p>
+          “Their SEO strategy increased our website traffic by 3x in just 2 months.”
+        </p>
+        <h4>Aarav Sharma</h4>
+        <span>TechNova</span>
+      </div>
+
+      <div class="testimonial-card">
+        <p>
+          “Professional team with creative ideas. Highly recommended for startups.”
+        </p>
+        <h4>Riya Mehta</h4>
+        <span>StyleHive</span>
+      </div>
+
+      <div class="testimonial-card">
+        <p>
+          “Excellent marketing campaigns that helped us scale our business quickly.”
+        </p>
+        <h4>Kabir Singh</h4>
+        <span>FitLife</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="section-title">
+      <h2>Contact Us</h2>
+      <p>Let’s discuss how we can grow your business together.</p>
+    </div>
+
+    <div class="contact-wrapper">
+      <div class="contact-info">
+        <h2>Get In Touch</h2>
+        <p>
+          Have a project in mind? Reach out to us today.
+        </p>
+
+        <br>
+
+        <p>📍 New Delhi, India</p>
+        <p>📞 +91 98765 43210</p>
+        <p>✉️ hello@growthspark.com</p>
+      </div>
+
+      <div class="contact-form">
+        <form>
+          <input type="text" placeholder="Your Name" required>
+          <input type="email" placeholder="Your Email" required>
+          <textarea placeholder="Your Message"></textarea>
+          <button class="btn" type="submit">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 GrowthSpark. All Rights Reserved.</p>
+  </footer>
+
+</body>
+</html>
